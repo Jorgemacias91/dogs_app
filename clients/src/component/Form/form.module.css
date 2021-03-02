@@ -1,0 +1,11 @@
+.block{
+    display: flex;
+    padding: 2%;
+    width:100%;
+
+}
+
+.btn{
+    display: flex;
+    
+}
