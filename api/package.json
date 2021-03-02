@@ -1,0 +1,33 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e html,js,css app.js",
+    "test": "jest --detectOpenHandles --forceExit",
+    "grade": "jest --useStderr --detectOpenHandles --forceExit --json --outputFile=./test/result.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^26.5.3",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.4",
+    "nunjucks": "^3.2.2",
+    "pg": "^8.3.2",
+    "pg-hstore": "^2.3.3",
+    "prompt-sync": "^4.2.0",
+    "sequelize": "^6.3.4",
+    "volleyball": "^1.5.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "supertest": "^4.0.2"
+  }
+}
