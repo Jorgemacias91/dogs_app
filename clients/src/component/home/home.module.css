@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
+
 .home{
-    background-image: url("https://images.pexels.com/photos/374906/pexels-photo-374906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-image: url("https://image.freepik.com/free-vector/cute-bone-pattern-yellow-background_1017-14893.jpg");
     
 }
 
@@ -20,8 +22,27 @@ nav{
     
 }
 
-.hijo{
+.fOrder{
     height: 35px;
+    display: flex;
+    order:3;
+}
+.crear{
+    height: 35px;
+    display: flex;
+    order:4;
+    text-decoration: none;
+    font-family: 'Stick', sans-serif;
+}
+.fTemp{
+    height: 35px;
+    display: flex;
+    order:2;
+}
+.fRaza{
+    height: 35px;
+    display: flex;
+    order:1;
 }
 
 .container{
@@ -66,5 +87,8 @@ nav{
 
 .formul{
     display: flex;
+}
+.btn{
+    margin-left:5px
 }
 

@@ -82,31 +82,31 @@ export function Home(props) {
           <input
             type="text"
             autoComplete="off"
-            placeholder="Razas"
+            placeholder="Races"
             name="raza"
             value={input.raza}
             onChange={handleInput}
           />
         </div>
-        <button className={style.btn}type="submit" >BUSCAR</button>
+        <button className={style.btn}type="submit" >Search</button>
       </form>
 
       {/*-----------------Boton para buscar por ASC y DES--------------------*/}
  
 
 
-  <select onChange={handleDispatchOrder} className={style.hijo}>
-    <option>Ordenamiento</option>
-    <option value={ASD}>Ascendente</option>
-    <option value={DES}>Descendente</option>
+  <select onChange={handleDispatchOrder} className={style.fOrder}>
+    <option>Ordering</option>
+    <option value={ASD}>Upward</option>
+    <option value={DES}>Falling</option>
   </select>
 
 
 {/*-----------Boton de filtrar por Temperamento---------------------*/}
 
 
-  <select name="nameT" value={input.nameT} onChange={handleDispatchTemp} className={style.hijo}>
-    <option value="">Filtrar por Temperamentos</option>
+  <select name="nameT" value={input.nameT} onChange={handleDispatchTemp} className={style.fTemp}>
+    <option value="">Filter by Temperaments</option>
     {props.estadoT && props.estadoT.map(elem => (
       <option value={elem.nameT}>{elem.nameT}</option>
     ))}
@@ -116,8 +116,8 @@ export function Home(props) {
 {/*-----------------Boton de filtrar por Raza--------------------*/}
 
 
-  <select name="razaSelect" value={input.razaSelect} onChange={handleDispatchRaza} className={style.hijo}>
-    <option value="">Filtrar por Razas</option>
+  <select name="razaSelect" value={input.razaSelect} onChange={handleDispatchRaza} className={style.fRaza}>
+    <option value="">Filter by Races</option>
     {props.estado && props.estado.map(elem => (
       <option key={elem.id}>{elem.name}</option>
     ))}
@@ -127,9 +127,7 @@ export function Home(props) {
 
 
 
-  <Link to="crearRaza" >
-    <button className={style.hijo}>Crear Razas</button>
-  </Link>
+  <Link to="crearRaza" className={style.crear}>Create Races</Link>
 
 
       
@@ -162,9 +160,9 @@ export function Home(props) {
       </div>
 
       <div className={style.btnPaginado}>
-        <button onClick={() => setPagRazas(pagRazas - 1)}>Atrás</button>
+        <button onClick={() => setPagRazas(pagRazas - 1)}>Backward</button>
         <button>{pagRazas}</button>
-        <button onClick={() => setPagRazas(pagRazas + 1)}>Próximo</button>
+        <button onClick={() => setPagRazas(pagRazas + 1)}>Forward</button>
       </div>
 
     </div>

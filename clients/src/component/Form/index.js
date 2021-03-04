@@ -50,75 +50,77 @@ function Form(props) {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <section className={style.container}>
 
-      <div className={style.block}>
-        <label>Nombre:</label>
-        <input
-          type="text"
-          name="name"
-          required="required"
-          value={input.name}
-          onChange={handleChange}
-        />
-      </div>
+      <form onSubmit={handleSubmit} className={style.formul}>
 
-      <div className={style.block}>
-        <label>Altura:</label>
-        <input
-          type="text"
-          name="height"
-          required="required"
-          value={input.height}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <input
+            placeholder="Name"
+            type="text"
+            name="name"
+            required="required"
+            value={input.name}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div className={style.block}>
-        <label>Peso:</label>
-        <input
-          type="text"
-          name="weight"
-          required="required"
-          value={input.weight}
-          onChange={handleChange}
-        />
-      </div>
+        <div >
+          <input
+          placeholder="Height"
+            type="text"
+            name="height"
+            required="required"
+            value={input.height}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div className={style.block}>
-        <label>Años de Vida:</label>
-        <input
-          type="text"
-          name="years"
-          required="required"
-          value={input.years}
-          onChange={handleChange}
-        />
-      </div >
+        <div>
+          <input
+          placeholder="Weight"
+            type="text"
+            name="weight"
+            required="required"
+            value={input.weight}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div className={style.btn}>
+        <div>
+          <input
+          placeholder="Years of Life"
+            type="text"
+            name="years"
+            required="required"
+            value={input.years}
+            onChange={handleChange}
+          />
+        </div >
+
+
 
         <div>
           <select name="sexo" value={input.sexo} onChange={handleChange} required>
-            <option value="">Sexo</option>
+            <option value="">Gender</option>
             <option value="Hembra">Hembra</option>
             <option value="Macho">Macho</option>
           </select>
         </div>
 
-        <div>
-          <select name="nameT" value={input.nameT} onChange={handleChange} required>
-            <option value="">Temperamentos</option>
-            {props.estadoT && props.estadoT.map(elem => (
-              <option value={elem.id}>{elem.nameT}</option>
-            ))}
-          </select>
-        </div>
+
+        <select name="nameT" value={input.nameT} onChange={handleChange} required>
+          <option value="">Temperaments</option>
+          {props.estadoT && props.estadoT.map(elem => (
+            <option value={elem.id}>{elem.nameT}</option>
+          ))}
+        </select>
 
 
-        <input type="submit" />
-      </div>
-    </form>
+        <input type="submit" value="Create Race" />
+
+      </form>
+    </section>
   )
 }
 

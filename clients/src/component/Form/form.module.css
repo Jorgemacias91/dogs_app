@@ -1,11 +1,20 @@
-.block{
-    display: flex;
-    padding: 2%;
-    width:100%;
 
+.container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
 }
-
-.btn{
+.formul{
+    margin-top: 20px;
+    background-color:white;
+    width: 400px;
+    height: 500px;
     display: flex;
+    justify-self: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
     
 }
