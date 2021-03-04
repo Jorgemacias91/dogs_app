@@ -1,17 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,300&display=swap');
+/* font-family: 'Open Sans', sans-serif; */
 
-
-.boton{
-    font-family: 'Reggae One', cursive;
-    font-size: xx-large;
-    text-align: center;
-    margin-top: 15%;
+header{
+    background: #FFE000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #799F0C, #FFE000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #799F0C, #FFE000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: auto;
     
+    width: 100%;
 }
 
-.font{
-    font-family: 'Reggae One', cursive;
-    font-size: xx-large;
+
+.container{
+    width:95%;
+    max-width: 1200px;
+    display:flex;
+    align-items: center;
+    margin:auto;
+    justify-content: space-around;
+}
+
+.imagen{
+    display: block;
+    height:500px;
+    object-fit: cover;
+    width: auto;
+    animation: moverArriba 2s ease-in;
+}
+
+.text{
+    width: 50%;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
-   
+}
+
+.text h2{
+    font-size: 60px;
+    animation: moverIzquierda 2s ease-in;
+}
+
+.text a{
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-weight: 300;
+    margin-top: 20px;
+    border: 1px solid white;
+    width:150px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+    animation: moverArriba 2s ease-in;
+}
+
+.wave{
+    height: 100px;
+    width: 100%;
+    background: #FFE000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #799F0C, #FFE000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #799F0C, #FFE000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.style1{
+    height: 150px; overflow: hidden;
+}
+
+.style2{
+    height: 100%; width: 100%;
+}
+
+.style3{
+    stroke: none; fill:white;
+}
+
+@keyframes moverIzquierda{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moverDerecha{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moverArriba{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
 }

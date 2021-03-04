@@ -72,9 +72,12 @@ export function Home(props) {
 
 
   return (
-    <>
-      {/*----Input de búsqueda para encontrar razas de perros por nombre-----*/}
-      <form className={style.form_container} onSubmit={handleDispatch}>
+    <div className={style.home}>
+
+      <nav>
+
+        {/*----Input de búsqueda para encontrar razas de perros por nombre-----*/}
+      <form className={style.formul}onSubmit={handleDispatch}>
         <div>
           <input
             type="text"
@@ -85,65 +88,58 @@ export function Home(props) {
             onChange={handleInput}
           />
         </div>
-        <button type="submit" className={style.boton}>BUSCAR</button>
+        <button className={style.btn}type="submit" >BUSCAR</button>
       </form>
 
       {/*-----------------Boton para buscar por ASC y DES--------------------*/}
-      <div className={style.buscar}>
-
-        <div>
-          <select onChange={handleDispatchOrder} >
-            <option>Ordenamiento</option>
-            <option value={ASD}>Ascendente</option>
-            <option value={DES}>Descendente</option>
-          </select>
-        </div>
+ 
 
 
-        {/*-----------Boton de filtrar por Temperamento---------------------*/}
-
-        <div>
-          <select name="nameT" value={input.nameT} onChange={handleDispatchTemp}>
-            <option value="">Filtrar por Temperamentos</option>
-            {props.estadoT && props.estadoT.map(elem => (
-              <option value={elem.nameT}>{elem.nameT}</option>
-            ))}
-          </select>
-        </div>
+  <select onChange={handleDispatchOrder} className={style.hijo}>
+    <option>Ordenamiento</option>
+    <option value={ASD}>Ascendente</option>
+    <option value={DES}>Descendente</option>
+  </select>
 
 
-        {/*-----------------Boton de filtrar por Raza--------------------*/}
-
-        <div>
-          <select name="razaSelect" value={input.razaSelect} onChange={handleDispatchRaza}>
-            <option value="">Filtrar por Razas</option>
-            {props.estado && props.estado.map(elem => (
-              <option key={elem.id}>{elem.name}</option>
-            ))}
-          </select>
-        </div>
-
-        {/*-----------------Boton de filtrar por Raza creada existente--------------------*/}
-
-        {/* <div>
-          <select onChange={handleDispatchSelect}>
-            <option value="">Filtrar por Razas</option>
-
-            <option value="existente">Existente</option>
-
-            <option value="creada">Creada</option>
+{/*-----------Boton de filtrar por Temperamento---------------------*/}
 
 
-          </select>
-        </div> */}
+  <select name="nameT" value={input.nameT} onChange={handleDispatchTemp} className={style.hijo}>
+    <option value="">Filtrar por Temperamentos</option>
+    {props.estadoT && props.estadoT.map(elem => (
+      <option value={elem.nameT}>{elem.nameT}</option>
+    ))}
+  </select>
 
-        <div>
-          <Link to="crearRaza">
-            <button>Crear Razas</button>
-          </Link>
-        </div>
 
-      </div>
+{/*-----------------Boton de filtrar por Raza--------------------*/}
+
+
+  <select name="razaSelect" value={input.razaSelect} onChange={handleDispatchRaza} className={style.hijo}>
+    <option value="">Filtrar por Razas</option>
+    {props.estado && props.estado.map(elem => (
+      <option key={elem.id}>{elem.name}</option>
+    ))}
+  </select>
+
+
+
+
+
+  <Link to="crearRaza" >
+    <button className={style.hijo}>Crear Razas</button>
+  </Link>
+
+
+      
+
+      </nav>
+      
+{/*-----------------Boton de filtrar por Raza creada existente--------------------*/}
+
+ 
+     
 
 
 
@@ -171,7 +167,7 @@ export function Home(props) {
         <button onClick={() => setPagRazas(pagRazas + 1)}>Próximo</button>
       </div>
 
-    </>
+    </div>
   )
 };
 
