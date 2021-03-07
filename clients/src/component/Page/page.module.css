@@ -111,3 +111,40 @@ header{
         transform: translate(0);
     }
 }
+
+@media screen and (max-width:1000px){
+    .imagen{
+        height: 400px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .imagen{
+        height: 370px;
+    }
+    .text h2{
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width:700px){
+    .imagen{
+        height: 250px;
+    }
+    .text h2{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:450px){
+    .container{
+        width:100%;
+        display:flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+   
+    .text h2{
+        font-size: 30px;
+    }
+}

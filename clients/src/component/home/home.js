@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import { filtroTemp, getRaza, getRazasAll, getTemperamentos, sort } from '../../actions/index'
 import { connect } from 'react-redux';
 import { ASD, DES } from '../../actions/index'
-
-
+import logo from '../../img/dog.png'
+import cachorro from '../../img/cachorro.png'
 
 export function Home(props) {
 
@@ -24,6 +24,14 @@ export function Home(props) {
   useEffect(() => {
     filtroTemp();
     filtroRaza();
+
+    const btnToggle = document.querySelector('.home_toggleBtn__1yeHu')
+btnToggle && btnToggle.addEventListener('click' ,function(){
+  console.log(document.getElementById('home_navig__EW3f9'))
+  document.getElementById('home_navig__EW3f9').classList.toggle('home_active__20C7U')
+  document.querySelector('body').classList.toggle('home_container__7Xk0y')
+});
+
   }, [])
 
   function filtroTemp() {
@@ -74,9 +82,23 @@ export function Home(props) {
   return (
     <div className={style.home}>
 
-      <nav>
+      {/* barra de navegación */}
 
+      <div id={style.navig} className={style.active}>
         {/*----Input de búsqueda para encontrar razas de perros por nombre-----*/}
+      
+      <div className={style.toggleBtn}>
+        <span>&#9776;</span>
+      </div>
+
+      <ul>
+
+        <li>
+          <img src={logo} className={style.imagen} width="200px" height="200px"/>
+        </li>
+
+        <li>
+      
       <form className={style.formul}onSubmit={handleDispatch}>
         <div>
           <input
@@ -90,49 +112,53 @@ export function Home(props) {
         </div>
         <button className={style.btn}type="submit" >Search</button>
       </form>
-
+</li>
       {/*-----------------Boton para buscar por ASC y DES--------------------*/}
  
 
-
+<li>
   <select onChange={handleDispatchOrder} className={style.fOrder}>
     <option>Ordering</option>
     <option value={ASD}>Upward</option>
     <option value={DES}>Falling</option>
   </select>
-
+</li>
 
 {/*-----------Boton de filtrar por Temperamento---------------------*/}
 
-
+<li>
   <select name="nameT" value={input.nameT} onChange={handleDispatchTemp} className={style.fTemp}>
     <option value="">Filter by Temperaments</option>
     {props.estadoT && props.estadoT.map(elem => (
       <option value={elem.nameT}>{elem.nameT}</option>
     ))}
   </select>
-
+</li>
 
 {/*-----------------Boton de filtrar por Raza--------------------*/}
 
-
+<li>
   <select name="razaSelect" value={input.razaSelect} onChange={handleDispatchRaza} className={style.fRaza}>
     <option value="">Filter by Races</option>
     {props.estado && props.estado.map(elem => (
       <option key={elem.id}>{elem.name}</option>
     ))}
   </select>
+</li>
+
+<li>
+<Link to="crearRaza" className={style.crear}>
+  <img src={cachorro} width="100px" height="100px"/>
+  <br/>
+  <p>Create Races</p>
+  </Link>
+</li>
 
 
 
+      </ul>
 
-
-  <Link to="crearRaza" className={style.crear}>Create Races</Link>
-
-
-      
-
-      </nav>
+      </div>
       
 {/*-----------------Boton de filtrar por Raza creada existente--------------------*/}
 
@@ -157,6 +183,7 @@ export function Home(props) {
           </div>
 
         ))}
+     
       </div>
 
       <div className={style.btnPaginado}>

@@ -1,9 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
 
-.home{
-    background-image: url("https://image.freepik.com/free-vector/cute-bone-pattern-yellow-background_1017-14893.jpg");
+
+*{
+    margin: 0;
+    padding: 0;
     
 }
+
+#navig{
+    position: fixed;
+    width:390px;
+    height: 100%;
+    background: #FFE000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #799F0C, #FFE000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #799F0C, #FFE000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    left:-390px;
+}
+
+ul li {
+    text-align: center;
+    list-style: none;
+    padding: 15px 10px;
+}
+
+.toggleBtn{
+    position:absolute;
+    left:393px;
+    top:20px;
+    cursor: pointer;
+    
+}
+
+.toggleBtn span{
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 25px;
+    border:1px solid black;
+    border-radius: 10%;
+}
+
+#navig.active{
+left:0;
+margin-left:0%;
+}
+
+
 
 .btn{
     height: 34px;
@@ -45,14 +87,16 @@ nav{
     order:1;
 }
 
+
 .container{
+    /* padding-top: 40px; */
     width: 100%;
     max-width: 1200px;
     height: 430px;
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
-    margin:auto; 
+    margin-left:10px; 
 }
 
 
