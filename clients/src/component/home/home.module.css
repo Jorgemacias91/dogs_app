@@ -9,7 +9,7 @@
 
 #navig{
     position: fixed;
-    width:390px;
+    width:440px;
     height: 100%;
     background: #FFE000;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #799F0C, #FFE000);  /* Chrome 10-25, Safari 5.1-6 */
@@ -70,7 +70,6 @@ nav{
     order:3;
 }
 .crear{
-    height: 35px;
     display: flex;
     order:4;
     text-decoration: none;
@@ -96,10 +95,8 @@ nav{
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
-    margin-left:10px; 
+    margin-left:auto; 
 }
-
-
 .container .card{
     width: 330px;
     height: 430px;
@@ -121,8 +118,6 @@ nav{
     height: 220px;
 }
 
-
-
 .btnPaginado{
     text-align: center;
     padding: 5%;
@@ -135,4 +130,69 @@ nav{
 .btn{
     margin-left:5px
 }
+
+
+
+
+@media screen and (max-width:375px){
+    #navig{
+        width:375px;    
+        left:-300px;
+    }
+
+    .toggleBtn{
+        left:317px;   
+        
+    }
+
+    .formul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .btn{
+        margin-top: 2%;
+        width: 50%;
+    }
+
+    .container{
+        margin-left: 14px;
+        display: flex;
+        order:1
+        
+    }
+    .container .card{
+        width: 260px;
+        height: 400px;
+       
+    }
+
+
+    .container .card .imagen{
+        width: 220px;
+        height: 200px;
+    }
+    .btnPaginado{
+        text-align: center;
+        display: flex;
+        order:0;
+        justify-self: flex-start;
+
+        
+    }
+
+    .movil{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+
+    }
+}
+
+
 

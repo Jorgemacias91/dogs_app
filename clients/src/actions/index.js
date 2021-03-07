@@ -8,7 +8,7 @@ export const DES = 'Razas-Z-A';
 
 export function getRazasAll() {
     return function (dispatch){
-        return fetch(`http://localhost:3001/dogs`)
+        return fetch(`http://157.245.8.158/dogs`)
         .then(response => response.json())
         .then(json => {
             dispatch({type: GET_RAZA_ALL, payload : json})

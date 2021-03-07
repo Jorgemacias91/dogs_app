@@ -148,7 +148,7 @@ btnToggle && btnToggle.addEventListener('click' ,function(){
 
 <li>
 <Link to="crearRaza" className={style.crear}>
-  <img src={cachorro} width="100px" height="100px"/>
+  <img src={cachorro} width="50px" height="50px"/>
   <br/>
   <p>Create Races</p>
   </Link>
@@ -169,7 +169,7 @@ btnToggle && btnToggle.addEventListener('click' ,function(){
 
 
       {/*-------------------razas----------------------*/}
-
+<div className={style.movil}>
       <div className={style.container}>
         {vista && vista.map((elem) => (
 
@@ -191,7 +191,7 @@ btnToggle && btnToggle.addEventListener('click' ,function(){
         <button>{pagRazas}</button>
         <button onClick={() => setPagRazas(pagRazas + 1)}>Forward</button>
       </div>
-
+</div>
     </div>
   )
 };
